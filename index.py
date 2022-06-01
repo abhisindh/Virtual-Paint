@@ -1,6 +1,7 @@
 from functions import *
 
-yellow = ColorMask('yellow',[8,108,162],[158,174,240])
+
+PINK = ColorMask('pink',[158,99,131],[173,186,255])
 
 normal = Window('Normal')
 hsv = Window('HSV',toHSV)

@@ -8,10 +8,10 @@ def empty(a):
 
 def addMask(img,color):
     lower = np.array(color.lower)
-    print(lower)
     upper = np.array(color.upper)
     mask = cv2.inRange(img,lower,upper)
-    return mask
+    imgResult = cv2.bitwise_and(img,img,mask=mask)
+    return imgResult
 
 
 
