@@ -1,7 +1,11 @@
+from turtle import color
 from functions import *
+import colors
 
 
-PINK = ColorMask('pink',[158,99,131],[173,186,255])
+print('starting')
+
+ColorList=[colors.PINK,colors.YELLOW,colors.S_BLUE]
 
 normal = Window('Normal')
 hsv = Window('HSV',toHSV)
@@ -10,5 +14,5 @@ hsv = Window('HSV',toHSV)
 
 
 
-startWebcam()
+startWebcam(ColorList)
 

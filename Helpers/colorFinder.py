@@ -14,12 +14,12 @@ cv2.namedWindow('trackbars')
 
 
 
-cv2.createTrackbar('Hue Min','trackbars',158,179,empty)
-cv2.createTrackbar('Hue Max','trackbars',173,179,empty)
-cv2.createTrackbar('Sat Min','trackbars',99,255,empty)
-cv2.createTrackbar('Sat Max','trackbars',186,255,empty)
-cv2.createTrackbar('Val Min','trackbars',131,255,empty)
-cv2.createTrackbar('Val Max','trackbars',255,255,empty)
+cv2.createTrackbar('Hue Min','trackbars',0,179,empty)
+cv2.createTrackbar('Hue Max','trackbars',0,179,empty)
+cv2.createTrackbar('Sat Min','trackbars',0,255,empty)
+cv2.createTrackbar('Sat Max','trackbars',0,255,empty)
+cv2.createTrackbar('Val Min','trackbars',0,255,empty)
+cv2.createTrackbar('Val Max','trackbars',0,255,empty)
 
 while True:
 

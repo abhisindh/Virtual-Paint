@@ -1,3 +1,4 @@
+from asyncio.windows_events import NULL
 import cv2
 import weakref
 import numpy as np
@@ -7,11 +8,12 @@ def empty(a):
     return a
 
 def addMask(img,color):
+    print(color.lower,color.upper)
     lower = np.array(color.lower)
     upper = np.array(color.upper)
-    mask = cv2.inRange(img,lower,upper)
-    imgResult = cv2.bitwise_and(img,img,mask=mask)
-    return imgResult
+    color.mask = cv2.inRange(img,lower,upper)
+    return color.mask
+
 
 
 
@@ -27,13 +29,13 @@ class Window:
 
 class ColorMask:
     instances = []
-    def __init__(self,name='Mask', lower =[0,0,0], upper = [100,100,100] , manipulate = addMask):
+    def __init__(self,name='Mask', lower =[0,0,0], upper = [100,100,100] , manipulate = addMask , mask = NULL):
         self.__class__.instances.append(weakref.proxy(self))
         self.name = name
         self.lower = lower
         self.upper = upper
         self.manipulate = manipulate
-    
+PINK = ColorMask('pink',[158,99,131],[173,186,255])   
 
 class TrackBar:
     instances = []
@@ -43,6 +45,8 @@ class TrackBar:
         self.var = var
         self.initial = initial
         self.max = max
+if __name__ == '__main__':
+    addMask('img',PINK)
 
 
 
