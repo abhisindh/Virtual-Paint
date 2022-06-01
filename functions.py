@@ -1,4 +1,3 @@
-
 from classes import *
 
 
@@ -12,15 +11,17 @@ def startWebcam(frameWidth = 640,frameHeight = 480,brightness = 130):
     cap.set(4,frameHeight)
     cap.set(10,brightness)
 
-    for trackbar in TrackBar.instances:
-            print(trackbar.name)
-
             
     while True:
         success, img = cap.read()
         for window in Window.instances:
             img = window.manipulate(img)
             cv2.imshow(window.name,img)
+
+        for color in ColorMask.instances:
+            img = color.manipulate(img,color)
+            cv2.imshow(color.name,img)
+
         if cv2.waitKey(1) & 0xFF == ord('q'):
             print('quitting')
             break
@@ -31,11 +32,7 @@ def createTrackBar(name='name',in_value=0,max_value=100):
     cv2.resizeWindow("TrackBars",640,240)
     cv2.createTrackbar(name,"TrackBars",in_value,max_value,empty)
 
-def addMask(img):
-    lower = np.array([5,107,0])
-    upper = np.array([5,107,0])
-    mask = cv2.inRange(img,lower,upper)
-    return mask
+
 
 
 
