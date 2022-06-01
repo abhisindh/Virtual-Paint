@@ -35,6 +35,7 @@ class ColorMask:
         self.lower = lower
         self.upper = upper
         self.manipulate = manipulate
+        self.mask = mask
         self.bgrValue = bgrValue
 PINK = ColorMask('pink',[158,99,131],[173,186,255])   
 
