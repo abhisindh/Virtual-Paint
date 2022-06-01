@@ -29,13 +29,13 @@ class Window:
 
 class ColorMask:
     instances = []
-    def __init__(self,name='Mask', lower =[0,0,0], upper = [100,100,100] , manipulate = addMask , rgbValue =(0,0,0),mask = NULL):
+    def __init__(self,name='Mask', lower =[0,0,0], upper = [100,100,100] , manipulate = addMask , bgrValue =(0,0,0),mask = NULL):
         self.__class__.instances.append(weakref.proxy(self))
         self.name = name
         self.lower = lower
         self.upper = upper
         self.manipulate = manipulate
-        self.rgbValue = rgbValue
+        self.bgrValue = bgrValue
 PINK = ColorMask('pink',[158,99,131],[173,186,255])   
 
 class TrackBar:

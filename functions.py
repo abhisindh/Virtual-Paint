@@ -36,7 +36,7 @@ def startWebcam(ColorList=[],frameWidth = 640,frameHeight = 480,brightness = 130
             imgContour = color.mask
             x,y = getContours(imgContour)
             if x:
-                point_list.append([x,y,color.rgbValue])
+                point_list.append([x,y,color.bgrValue])
             for point in point_list:
                 cv2.circle(imgResult,(point[0],point[1]),10,point[2],-1)
 
