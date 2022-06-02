@@ -16,4 +16,4 @@ To run the code, type
 ```
 python main.py
 ```
-To quit the programme press <mark>q</mark>
+To quit the programme press ```q```
