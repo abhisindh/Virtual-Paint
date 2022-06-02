@@ -3,6 +3,9 @@
 
 Given the real time webcam data, this paint-like python application uses OpenCV library to track an object-of-interest  and allows the user to draw by moving the object, which makes it both awesome and challenging to draw simple things.
 
+## Demo
+<img src="demo.png">
+
 ## Project description
 
 This Python application uses OpenCV library to track any having pre-defined color and uses the detected object to draw colored lines (Blue, Green, Red and Yellow).
